@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+    .nav-button{
+    @apply hover:text-gray-200 hover:border-b-yellow-400 hover:border-b-4;}
+}
