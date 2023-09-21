@@ -1,22 +1,30 @@
 "use strict";
 
-
 let modal = document.querySelector('div.fixed')
 
 const openModal = ()=>{
     modal.style.opacity='100';
 }
 
-document.querySelector('img.fixed').addEventListener('click',openModal);
+const closeModal=()=> {
+    modal.style.opacity='0';
+}
+ 
+const toggleButton = document.querySelector('img.fixed');
 
-// to close the toggle button modal 
+const toggleEvent = ()=>{
+    if(modal.style.opacity === '100'){
+        closeModal()
+    }
+    else{openModal()}
+}
+
+toggleButton.addEventListener('click', toggleEvent);
+
+// to close the toggle button modal with the textcontent
 
 let close = document.querySelectorAll('.last li, .btn');
 
-
-const closeModal=(element)=> {
-    modal.style.opacity='0';
-}
 
 close.forEach((element) => {
     element.addEventListener('click', function () {
